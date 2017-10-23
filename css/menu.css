@@ -1,5 +1,5 @@
 
-ul {
+ul.mainMenu {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -7,12 +7,12 @@ ul {
 	background-color: cornflowerblue;
 }
 
-li {
+.mainMenu li {
 	float: right;
 
 }
 
-li a {
+.mainMenu li a {
 	display: block;
 	color: white;
 	text-align: center;
@@ -21,15 +21,15 @@ li a {
 }
 
 /* Change the link color to #111 (black) on hover */
-li a:hover {
+.mainMenu li a:hover {
 	background-color: blue;
 }
 
-.active {
+.mainMenu .active {
 	background-color: #4CAF50;
 }
 
-li #ofekIcon {
+.mainMenu li #ofekIcon {
 	max-height: 40px;
 	max-width: 40px;
 	display: block;
