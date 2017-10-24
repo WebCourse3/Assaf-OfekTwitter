@@ -37,15 +37,13 @@ img {
 	max-height:100%;
 }
 
-form {
-	margin-bottom: 40px;
-}
 
 .form-container {
 	margin: 20px auto 0;
 	display: inline-block;
 	border: 1px solid black;
 	border-radius: 5px;
+	padding-bottom: 3px;
 }
 .form-header {
 	background-color: cornflowerblue;
@@ -56,9 +54,10 @@ form {
 .form-body {
 	padding: 5px 5px 5px;
 	border: 1px solid;
-	margin: 3px;
+	margin: 3px 3px 5px;
 }
 
 .form-fotter {
 	margin-right: 5px;
+	margin-bottom: 10px;
 }
