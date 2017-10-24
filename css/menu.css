@@ -29,7 +29,18 @@ ul.mainMenu {
 	background-color: #4CAF50;
 }
 
+
+li.left {
+	float:left;
+}
+
+.center {
+	width: 80%;
+	margin:auto;
+}
+
 .mainMenu li #ofekIcon {
+	margin-top: 2.5px;
 	max-height: 40px;
 	max-width: 40px;
 	display: block;
