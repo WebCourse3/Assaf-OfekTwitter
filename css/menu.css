@@ -1,52 +1,5 @@
-/*this is menu.css*/
-
-.mainMenu {
-
-}
-
-ul.mainMenu {
-	list-style-type: none;
-	margin: 0px;
-	padding: 0px;
-	overflow: hidden;
-	float: top;
-	background-color: cornflowerblue;
-}
-
-.mainMenu li {
-	float: right;
-}
-
-.mainMenu li a {
-	display: block;
-	color: white;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-}
-
-.mainMenu li a:hover {
-	background-color: blue;
-}
-
-.mainMenu .active {
-	background-color: #4CAF50;
-}
-
-
-li.left {
-	float:left;
-}
-
-.center {
-	width: 80%;
-	margin:auto;
-}
-
-.mainMenu li #ofekIcon {
-	margin-top: 2.5px;
-	max-height: 40px;
-	max-width: 40px;
-	display: block;
-	text-align: center;
+.navbar-brand img
+{
+	max-height: 20px;
+	max-width: 20px;
 }

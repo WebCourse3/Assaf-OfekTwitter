@@ -5,22 +5,33 @@
 	<meta charset="UTF-8">
 	<title>Sign Up</title>
 
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../css/menu.css">
 	<link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 
 <body>
 
-<ul class="mainMenu" >
-	<li class="left">
-		<img src="../images/ofek.png" alt="Ofek Icon" id="ofekIcon">
-	</li>
-	<li class="left"><a href="index.html">Ofek Twitter</a></li>
 
-	<li><a class="active" href="signup.html">SIGN UP</a></li>
-	<li><a href="signin.html">SIGN IN</a></li>
-	<li><a href="users.html">USERS</a></li>
-</ul>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+
+		<div class="navbar-header" style="text-align: right">
+			<a class="navbar-brand" href="index.html">
+				<span><img alt="Brand" src="../images/ofek.png"></span>
+				Ofek Twitter
+			</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="users.html">Users</a></li>
+				<li class="active"><a href="signup.html">Sign Up</a></li>
+				<li><a href="signin.html">Sign In</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
 	<div class="main-container">
 		<div class="center">
 			<div class="form-container">
