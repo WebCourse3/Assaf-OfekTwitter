@@ -35,32 +35,102 @@
 	</div>
 </nav>
 
-<div class="main-container">
-	<div class ="search-bar">
-		<form>
-			Filter by: <input type="text" placeholder="user name"/> <input type="submit" value="OK">
+<div class="row">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-8">
+		<form class="form-inline">
+			<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Filter by Username">
+			<button type="submit" class="btn btn-primary">ok</button>
 		</form>
+
 	</div>
+	<div class="col-sm-3">
+	</div>
+</div>
 
-	<div id="users-container">
+<div class="row">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-8">
+		<div class="users">
+			<ul class="users-list">
+				<li>
+					<div class="form-group">
+						<div class="user-avatar"><img src="../images/useravatar.png"></div>
+						<div><button type="button" class="btn btn-primary user-action">follow</button></div>
+						<label style="margin-top: 10px"> Marty McFly </label>
+					</div>
+				</li>
 
-		<div class="user-box">
-			<div class="user-avatar">
-				<img src="../images/useravatar.png">
-			</div>
-			<div class="user-action">
-				<input class="fit-outside" type="button" value="follow">
-			</div>
-			<div class="user-name">
-				user name
-			</div>
+				<li>
+					<div class="form-group">
+						<div class="user-avatar"><img src="../images/useravatar.png"></div>
+						<div><button type="button" class="btn btn-primary user-action">follow</button></div>
+						<label style="margin-top: 10px"> Janis Joplin </label>
+					</div>
+				</li>
+				<li>
+					<div class="form-group">
+						<div class="user-avatar"><img src="../images/useravatar.png"></div>
+						<div><button type="button" class="btn btn-primary user-action">follow</button></div>
+						<label style="margin-top: 10px"> Albert Einstein </label>
+					</div>
+				</li>
+				<li>
+					<div class="form-group">
+						<div class="user-avatar"><img src="../images/useravatar.png"></div>
+						<div><button type="button" class="btn btn-primary user-action">follow</button></div>
+						<label style="margin-top: 10px"> Genghis Khan</label>
+					</div>
+				</li>
+				<li>
+					<div class="form-group">
+						<div class="user-avatar"><img src="../images/useravatar.png"></div>
+						<div><button type="button" class="btn btn-primary user-action">unfollow</button></div>
+						<label style="margin-top: 10px"> Dracula </label>
+					</div>
+				</li>
+				<li>
+					<div class="form-group">
+						<div class="user-avatar"><img src="../images/useravatar.png"></div>
+						<div><button type="button" class="btn btn-primary user-action">follow</button></div>
+						<label style="margin-top: 10px"> Forest Gump</label>
+					</div>
+				</li>
+				<li>
+					<div class="form-group">
+						<div class="user-avatar"><img src="../images/useravatar.png"></div>
+						<div><button type="button" class="btn btn-primary user-action">follow</button></div>
+						<label style="margin-top: 10px"> Caligula </label>
+					</div>
+				</li>
+				<li>
+					<div class="form-group">
+						<div class="user-avatar"><img src="../images/useravatar.png"></div>
+						<div><button type="button" class="btn btn-primary user-action">follow</button></div>
+						<label style="margin-top: 10px"> Winnie The Poh </label>
+					</div>
+				</li>
+				<li>
+					<div class="form-group">
+						<div class="user-avatar"><img src="../images/useravatar.png"></div>
+						<div><button type="button" class="btn btn-primary user-action">follow</button></div>
+						<label style="margin-top: 10px"> Obama </label>
+					</div>
+				</li>
+				<li>
+					<div class="form-group">
+						<div class="user-avatar"><img src="../images/useravatar.png"></div>
+						<div><button type="button" class="btn btn-primary user-action">unfollow</button></div>
+						<label style="margin-top: 10px"> Henry the 8th </label>
+					</div>
+				</li>
+			</ul>
 		</div>
 
 	</div>
-
-	<div class="followees-container">
-		followees-container
+	<div class="col-sm-3">
 	</div>
 </div>
 </body>
+
 </html>
