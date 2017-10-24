@@ -25,7 +25,6 @@ ul.mainMenu {
 	text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
 .mainMenu li a:hover {
 	background-color: blue;
 }

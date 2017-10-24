@@ -1,4 +1,47 @@
 /*this is users.css*/
-.users-container{
+
+.search-bar {
+	margin-bottom: 20px;
+}
+#users-container{
+	border: 1px solid black;
+	width: 70%;
+	heigth: 100%;
+	float:left;
+}
+
+.followees-container{
+	border: 1px solid black;
+	float:right;
+	width: 25%;
+	height:100%;
+}
+
+.user-box{
+	border: 2px solid skyblue;
+	border-radius: 3px;
+	padding: 10px 20px 15px;
+	margin: 5px 5px 5px 5px;
+	display: inline-block;
+	text-align: center;
+}
+
+.user-avatar {
+	width: 50px;
+	margin: 0px auto 0;
+
+}
+.user-action {
+	width: 50px;
+	margin: 0px auto 0;
+
+}
+
+.fit-outside {
+	display: block;
+	width: 100%;
+}
+
+.user-name{
 
 }
