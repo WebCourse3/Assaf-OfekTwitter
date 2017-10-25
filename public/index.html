@@ -5,65 +5,81 @@
 	<meta charset="UTF-8">
 	<title>Ofek Twitter</title>
 
-	<link rel="stylesheet" type="text/css" href="../css/menu.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../css/styles.css">
+	<link rel="stylesheet" type="text/css" href="../css/navbar.css">
+	<link rel="stylesheet" type="text/css" href="../css/tweet.css">
 </head>
-
-
 <body>
 
-<ul class="mainMenu" >
-	<li class="left">
-		<img src="../images/ofek.png" alt="Ofek Icon" id="ofekIcon">
-	</li>
-	<li class="left"><a href="index.html">Ofek Twitter</a></li>
-	<li><a href="signup.html">SIGN UP</a></li>
-	<li><a href="signin.html">SIGN IN</a></li>
-	<li><a  href="users.html">USERS</a></li>
-</ul>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
 
-<div class="main-container">
-	<form style="margin-bottom: 40px">
-		<textarea rows="4" cols="100"> </textarea> </br>
-		<input type="submit" value="publish">
-	</form>
+		<div class="navbar-header" style="text-align: right">
+			<a class="navbar-brand" href="index.html">
+				<span><img alt="Brand" src="../images/ofek.png"></span>
+				Ofek Twitter
+			</a>
+		</div>
 
-	<div class = "tweets-container">
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="users.html">Users</a></li>
+				<li><a href="signup.html">Sign Up</a></li>
+				<li><a href="signin.html">Sign In</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div class="row">
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+		<div class="form-group">
+			<textarea class="form-control" rows="3" placeholder="tweet text..."></textarea>
+			<button type="button" class="btn btn-primary button-right">publish</button>
+		</div>
+
+	</div>
+	<div class="col-sm-2"></div>
+</div>
+
+<div class="row">
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+
 		<div class="tweet">
 			<div class="tweet-avatar"><img src="../images/useravatar.png"></div>
 			<div class="tweet-author">James Bond says:</div>
-			<div class="tweet-message">bla bla bla bla</div>
-			<div class="tweet-child">
-				<div class="tweet">
-					<div class="tweet-avatar"><img src="../images/useravatar.png"></div>
-					<div class="tweet-author">James Bond says:</div>
-					<div class="tweet-message">bla bla bla bla</div>
-					<div class="tweet-child">
-						<div class="tweet">
-							<div class="tweet-avatar"><img src="../images/useravatar.png"></div>
-							<div class="tweet-author">James Bond says:</div>
-							<div class="tweet-message">bla bla bla bla</div>
-							<div class="tweet-child">
-								<div class="tweet">
-									<div class="tweet-avatar"><img src="../images/useravatar.png"></div>
-									<div class="tweet-author">James Bond says:</div>
-									<div class="tweet-message">bla bla bla bla</div>
-									<div class="tweet-child">
-
-									</div>
-								</div>
-							</div>
-							</div>
-						</div>
-					</div>
-					</div>
-				</div>
-			</div>
-				</div>
-			</div>
+			<div class="tweet-message">Blabla bla...</div>
 		</div>
-	</div>
-</div>
 
+		<div class="tweet">
+			<div class="tweet-avatar"><img src="../images/useravatar.png"></div>
+			<div class="tweet-author">James Bond says:</div>
+			<div class="tweet-message">Bond, James bond</div>
+		</div>
+
+		<div class="tweet">
+			<div class="tweet-avatar"><img src="../images/useravatar.png"></div>
+			<div class="tweet-author">Albert Einstein says:</div>
+			<div class="tweet-message">E = mc^2</div>
+		</div>
+
+		<div class="tweet">
+			<div class="tweet-avatar"><img src="../images/useravatar.png"></div>
+			<div class="tweet-author">Bill Gates says:</div>
+			<div class="tweet-message">I think 64 bytes should be enough for everyone</div>
+		</div>
+
+		<div class="tweet">
+			<div class="tweet-avatar"><img src="../images/useravatar.png"></div>
+			<div class="tweet-author">Frodo says:</div>
+			<div class="tweet-message">My Precious</div>
+		</div>
+
+	</div>
+	<div class="col-sm-2"></div>
+</div>
 </body>
 </html>

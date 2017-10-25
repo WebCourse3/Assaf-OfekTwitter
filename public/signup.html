@@ -5,51 +5,62 @@
 	<meta charset="UTF-8">
 	<title>Sign Up</title>
 
-	<link rel="stylesheet" type="text/css" href="../css/menu.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../css/navbar.css">
 	<link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 
 <body>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
 
-<ul class="mainMenu" >
-	<li class="left">
-		<img src="../images/ofek.png" alt="Ofek Icon" id="ofekIcon">
-	</li>
-	<li class="left"><a href="index.html">Ofek Twitter</a></li>
+		<div class="navbar-header" style="text-align: right">
+			<a class="navbar-brand" href="index.html">
+				<span><img alt="Brand" src="../images/ofek.png"></span>
+				Ofek Twitter
+			</a>
+		</div>
 
-	<li><a class="active" href="signup.html">SIGN UP</a></li>
-	<li><a href="signin.html">SIGN IN</a></li>
-	<li><a href="users.html">USERS</a></li>
-</ul>
-<div class="main-container">
-	<div class="main-container">
-		<div class="center">
-			<div class="form-container">
-				<div class="form-header">
-					Sign Up
-				</div>
-				<form>
-					<div class="form-body">
-					<table>
-						<tr>
-							<td>Username:</td> <td><input type="text"/> </br></td>
-						</tr>
-						<tr>
-							<td>Password:</td> <td><input type="text"/> </br></td>
-						</tr>
-						<tr>
-							<td>Confirm Password:</td> <td><input type="text"/> </br></td>
-						</tr>
-					</table>
-					</div>
-					<div class="form-fotter">
-						<input type="submit" value="Submit" style="float: right">
-					</div>
-
-				</form>
-			</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="users.html">Users</a></li>
+				<li class="active"><a href="signup.html">Sign Up</a></li>
+				<li><a href="signin.html">Sign In</a></li>
+			</ul>
 		</div>
 	</div>
+</nav>
 
-</div></body>
+
+<div class="row">
+	<div class="col-sm-3"></div>
+	<div class="col-sm-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Sign Up</div>
+				<div class="panel-body">
+					<form>
+						<div class="form-group">
+							<label>Username:</label>
+							<input class="form-control" placeholder="Username">
+						</div>
+						<div class="form-group">
+							<label>Password:</label>
+							<input type="password" class="form-control" placeholder="Password">
+						</div>
+						<div class="form-group">
+							<label>Confirm Password:</label>
+							<input type="password" class="form-control" placeholder="Password Again">
+						</div>
+						<div class="form-group">
+							<button type="button" class="btn btn-primary button-right">Sign Up</button>
+						</div>
+					</form>
+				</div>
+
+			</div>
+	</div>
+	<div class="col-sm-3"></div>
+</div>
+
+</body>
 </html>

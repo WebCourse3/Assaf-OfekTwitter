@@ -1,4 +1,69 @@
-/*this is users.css*/
-.users-container{
+
+.users {
+
+}
+.users-list {
+	padding-left: 0;
+	list-style: none;
+}
+.users li {
+	float: left;
+	display:inline-block;
+	width: 13%;
+	height: 170px;
+	padding: 10px;
+
+	line-height: 1.4;
+	text-align: center;
+	border: 1px solid gainsboro;
+
+	border-radius: 5px;
+	margin-right:20px;
+	margin-bottom: 20px;
+
+}
+
+.users li:hover {
+	background-color: #c7ddef;
+}
+
+.user-action {
+	margin-top: 10px;
+}
+
+.user-name {
+	margin-top: 10px;
+}
+
+.panel-default {
+	border: 5px solid deeppink;
+}
+
+.panel-heading {
+	text-align: center;
+}
+
+.followees-list {
+	padding-left: 0;
+	list-style: none;
+}
+.followees ul {
+	list-style:none;
+	margin:0 auto;
+	text-align: center;
+}
+
+.followees li {
+	display:inline-block;
+	width: 70%;
+	height: 150px;
+	padding: 10px;
+
+	line-height: 1.4;
+	text-align: center;
+	border: 1px solid gainsboro;
+
+	border-radius: 5px;
+	margin-bottom: 20px;
 
 }

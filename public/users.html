@@ -5,7 +5,8 @@
 	<meta charset="UTF-8">
 	<title>Users</title>
 
-	<link rel="stylesheet" type="text/css" href="../css/menu.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../css/navbar.css">
 	<link rel="stylesheet" type="text/css" href="../css/styles.css">
 	<link rel="stylesheet" type="text/css" href="../css/users.css">
 
@@ -13,26 +14,148 @@
 
 <body>
 
-<ul class="mainMenu" >
-	<li class="left">
-		<img src="../images/ofek.png" alt="Ofek Icon" id="ofekIcon">
-	</li>
-	<li class="left"><a href="index.html">Ofek Twitter</a></li>
-	<li><a href="signup.html">SIGN UP</a></li>
-	<li><a href="signin.html">SIGN IN</a></li>
-	<li><a class="active"  href="users.html">USERS</a></li>
-</ul>
 
-<div class="main-container">
-	<div class ="search-bar">
-		<form>
-			Filter by: <input type="text" placeholder="user name"/> <input type="submit" value="OK">
-		</form>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+
+		<div class="navbar-header" style="text-align: right">
+			<a class="navbar-brand" href="index.html">
+				<span><img alt="Brand" src="../images/ofek.png"></span>
+				Ofek Twitter
+			</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active"><a href="users.html">Users</a></li>
+				<li><a href="signup.html">Sign Up</a></li>
+				<li><a href="signin.html">Sign In</a></li>
+			</ul>
+		</div>
 	</div>
+</nav>
 
-	<div class = "users-container">
+<div class="row">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-8">
+		<form class="form-inline">
+			<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Filter by Username">
+			<button type="submit" class="btn btn-primary">ok</button>
+		</form>
+
+	</div>
+	<div class="col-sm-3">
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-8">
+		<div class="users">
+			<ul class="users-list">
+				<li>
+					<div class="form-group">
+						<div class="user-avatar"><img src="../images/useravatar.png"></div>
+						<div><button type="button" class="btn btn-primary user-action">follow</button></div>
+						<label class="user-name"> Marty McFly </label>
+					</div>
+				</li>
+
+				<li>
+					<div class="form-group">
+						<div class="user-avatar"><img src="../images/useravatar.png"></div>
+						<div><button type="button" class="btn btn-primary user-action">follow</button></div>
+						<label class="user-name"> Janis Joplin </label>
+					</div>
+				</li>
+				<li>
+					<div class="form-group">
+						<div class="user-avatar"><img src="../images/useravatar.png"></div>
+						<div><button type="button" class="btn btn-primary user-action">follow</button></div>
+						<label class="user-name"> Albert Einstein </label>
+					</div>
+				</li>
+				<li>
+					<div class="form-group">
+						<div class="user-avatar"><img src="../images/useravatar.png"></div>
+						<div><button type="button" class="btn btn-primary user-action">follow</button></div>
+						<label class="user-name"> Genghis Khan</label>
+					</div>
+				</li>
+				<li>
+					<div class="form-group">
+						<div class="user-avatar"><img src="../images/useravatar.png"></div>
+						<div><button type="button" class="btn btn-primary user-action">unfollow</button></div>
+						<label class="user-name"> Dracula </label>
+					</div>
+				</li>
+				<li>
+					<div class="form-group">
+						<div class="user-avatar"><img src="../images/useravatar.png"></div>
+						<div><button type="button" class="btn btn-primary user-action">follow</button></div>
+						<label class="user-name"> Forest Gump</label>
+					</div>
+				</li>
+				<li>
+					<div class="form-group">
+						<div class="user-avatar"><img src="../images/useravatar.png"></div>
+						<div><button type="button" class="btn btn-primary user-action">follow</button></div>
+						<label class="user-name"> Caligula </label>
+					</div>
+				</li>
+				<li>
+					<div class="form-group">
+						<div class="user-avatar"><img src="../images/useravatar.png"></div>
+						<div><button type="button" class="btn btn-primary user-action">follow</button></div>
+						<label class="user-name"> Winnie The Poh </label>
+					</div>
+				</li>
+				<li>
+					<div class="form-group">
+						<div class="user-avatar"><img src="../images/useravatar.png"></div>
+						<div><button type="button" class="btn btn-primary user-action">follow</button></div>
+						<label class="user-name"> Obama </label>
+					</div>
+				</li>
+				<li>
+					<div class="form-group">
+						<div class="user-avatar"><img src="../images/useravatar.png"></div>
+						<div><button type="button" class="btn btn-primary user-action">unfollow</button></div>
+						<label class="user-name"> Henry the 8th </label>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="col-sm-2">
+		<div class="panel panel-default">
+			<div class="panel-heading"><h3>Followees</h3></div>
+				<div class="panel-body">
+					<div class="followees">
+						<ul class="followees-list">
+							<li>
+								<div class="form-group">
+									<div class="user-avatar"><img src="../images/useravatar.png"></div>
+									<div><button type="button" class="btn btn-primary user-action">unfollow</button></div>
+								<label class="user-name"> Dracula </label>
+								</div>
+							</li>
+							<li>
+								<div class="form-group">
+									<div class="user-avatar"><img src="../images/useravatar.png"></div>
+									<div><button type="button" class="btn btn-primary user-action">unfollow</button></div>
+									<label class="user-name"> Henry the 8th </label>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+		</div>
+	</div>
+	<div class="col-sm-1">
 
 	</div>
 </div>
 </body>
+
 </html>

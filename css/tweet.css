@@ -1,0 +1,18 @@
+.tweet {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.tweet-avatar {
+	float: left;
+	margin-right: 10px;
+	height: 48px;
+	width: 48px;
+}
+
+.tweet-author {
+	font-weight: bold;
+}
+
+.tweet-message {
+
+}
