@@ -41,7 +41,7 @@ function createTweetDivElement(tweet) {
 	return tweetDiv;
 }
 
-function displayTweets() {
+function loadTweets() {
 	var tweetsListElement = document.getElementById('tweetsList');
 	tweetsListElement.innerHTML = '';
 
@@ -57,4 +57,4 @@ var tweetsArray =
 		{author: 'Mimi', message: 'I want to go to sleep'}
 	];
 
-window.onload = displayTweets();
+window.onload = loadTweets();

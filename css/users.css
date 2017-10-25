@@ -1,12 +1,9 @@
 
-.users {
-
-}
 .users-list {
 	padding-left: 0;
 	list-style: none;
 }
-.users li {
+#users li {
 	float: left;
 	display:inline-block;
 	width: 13%;
@@ -23,7 +20,7 @@
 
 }
 
-.users li:hover {
+#users li:hover {
 	background-color: #c7ddef;
 }
 
