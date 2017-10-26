@@ -1,5 +1,6 @@
 
 function createDivElement(className) {
+	className = className || "";
 	var div = document.createElement('div');
 	div.className = className;
 	return div;

@@ -3,18 +3,16 @@ function filterUsersOnKeyUp(textbox) {
 }
 
 function getIdOfButton(button) {
-	return button.id.substring(3);
+	return button.id.substring(BTN.length);
 }
 
 function followButtonOnClick() {
-	var classPrimary = 'btn-primary';
-	var classDanger = 'btn-danger';
 	var id = getIdOfButton(this);
 	if (this.followed) {
-		updateButtonAttributes(this, classDanger, classPrimary, 'follow');
+		updateButtonAttributes(this, CLASS_DANGER, CLASS_PRIMARY, FOLLOW);
 		moveToUsers(id);
 	} else {
-		updateButtonAttributes(this, classPrimary, classDanger, 'unfollow');
+		updateButtonAttributes(this, CLASS_PRIMARY, CLASS_DANGER, UNFOLLOW);
 		moveToFollowees(id);
 	}
 	this.followed = !this.followed;
@@ -46,7 +44,7 @@ function moveElementToUsersList(liId) {
 }
 
 function moveElementBetweenLists(liId, listToId) {
-	var element = document.getElementById("li"+liId);
+	var element = document.getElementById(LI+liId);
 	element.parentNode.removeChild(element);
 
 	var list = document.getElementById(listToId);
@@ -71,8 +69,8 @@ function moveUserBetweenArrays(arrayFrom, arrayTo, id) {
 
 function createUserLiElement(user) {
 
-	var userLi = document.createElement("li");
-	userLi.id = "li"+user.id;
+	var userLi = document.createElement(LI);
+	userLi.id = LI+user.id;
 
 	var formGroupDiv = createDivElement("form-group");
 
@@ -80,11 +78,11 @@ function createUserLiElement(user) {
 	var imgElement = createImgElement("../images/useravatar.png");
 	userAvatar.appendChild(imgElement);
 
-	var buttonDiv = document.createElement("div");
-	var buttonElement = createButtonElement('btn user-action ', user.followed ? 'unfollow' : 'follow');
-	buttonElement.className +=  user.followed ? 'btn-danger' : 'btn-primary';
+	var buttonDiv = createDivElement();
+	var buttonElement = createButtonElement('btn user-action ', user.followed ? UNFOLLOW : FOLLOW);
+	buttonElement.className +=  user.followed ? CLASS_DANGER : CLASS_PRIMARY;
 	buttonElement.followed = user.followed;
-	buttonElement.id = "btn"+user.id;
+	buttonElement.id = BTN+user.id;
 	buttonElement.addEventListener("click", followButtonOnClick);
 	buttonDiv.appendChild(buttonElement);
 
@@ -103,9 +101,9 @@ function load() {
 	loadFollowees();
 }
 function loadUsers(filter) {
-	filter = filter || "";
+	filter = filter || EMPTY_STRING;
 	var usersList = document.getElementById('users-list');
-	usersList.innerHTML = "";
+	usersList.innerHTML = EMPTY_STRING;
 	usersArray.forEach(function (currentUser) {
 		if (currentUser.username.includes(filter)) {
 			usersList.appendChild(createUserLiElement(currentUser));
@@ -114,7 +112,7 @@ function loadUsers(filter) {
 }
 function loadFollowees() {
 	var followeesList = document.getElementById('followees-list');
-	followeesList.innerHTML = "";
+	followeesList.innerHTML = EMPTY_STRING;
 	followeesArray.forEach(function (currentUser) {
 		followeesList.appendChild(createUserLiElement(currentUser));
 	})
@@ -136,5 +134,13 @@ var followeesArray = [
 	{id: "4", username: 'Dracula', followed: true},
     {id: "9", username: 'Henry the 8th', followed: true}
 ];
+//constants
+const CLASS_PRIMARY = 'btn-primary';
+const CLASS_DANGER = 'btn-danger';
+const LI = "li";
+const BTN = "btn";
+const FOLLOW = "follow";
+const UNFOLLOW = "unfollow";
+const EMPTY_STRING = "";
 
 window.onload = load();
