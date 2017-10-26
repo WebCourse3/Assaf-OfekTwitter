@@ -9,15 +9,22 @@ function followButtonOnClick() {
 	var id = getIdOfButton(this);
 	if (this.followed) {
 		updateButtonAttributes(this, classDanger, classPrimary, 'follow');
-		moveElementToUsersList(id); // this gets the li element
-		moveToUsersList(id);
+		moveToUsers(id);
 	} else {
 		updateButtonAttributes(this, classPrimary, classDanger, 'unfollow');
-		moveElementToFolloweesList(id); // this gets the li element
-		moveToFolloweesList(id);
+		moveToFollowees(id);
 	}
-
 	this.followed = !this.followed;
+}
+
+function moveToUsers(id) {
+	moveElementToFolloweesList(id); // this gets the li element
+	moveToFolloweesList(id);
+}
+
+function moveToFollowees(id) {
+	moveElementToUsersList(id); // this gets the li element
+	moveToUsersList(id);
 }
 
 function updateButtonAttributes(button, removeClass, addClass, html) {
@@ -27,31 +34,36 @@ function updateButtonAttributes(button, removeClass, addClass, html) {
 }
 
 function moveElementToFolloweesList(liId) {
-	var element = document.getElementById("li"+liId);
-	element.parentNode.removeChild(element);
-	var followeesList = document.getElementById('followees-list');
-	followeesList.appendChild(element);
-}
-
-function moveToFolloweesList(id)  {
-	var arrayElement = usersArray.find(e=>e.id == id);
-	arrayElement.followed = true;
-	followeesArray.push(arrayElement);
-	usersArray = usersArray.filter(e => e.id != id);
+	moveElementBetweenLists(liId, 'followees-list');
 }
 
 function moveElementToUsersList(liId) {
+	moveElementBetweenLists(liId, 'users-list');
+}
+
+function moveElementBetweenLists(liId, listToId) {
 	var element = document.getElementById("li"+liId);
 	element.parentNode.removeChild(element);
-	var usersList = document.getElementById('users-list');
-	usersList.appendChild(element);
+
+	var list = document.getElementById(listToId);
+	list.appendChild(element);
+}
+
+function moveToFolloweesList(id)  {
+	var arrayElement = moveUserBetweenArrays(usersArray, followeesArray, id);
+	arrayElement.followed = true;
 }
 
 function moveToUsersList(id) {
-	var arrayElement = followeesArray.find(e=>e.id == id);
+	var arrayElement = moveUserBetweenArrays(followeesArray, usersArray, id);
 	arrayElement.followed = false;
-	usersArray.push(arrayElement);
-	followeesArray = followeesArray.filter(e => e.id != id);
+}
+
+function moveUserBetweenArrays(arrayFrom, arrayTo, id) {
+	var arrayElement = arrayFrom.find(e=>e.id == id);
+	arrayTo.push(arrayElement);
+	arrayFrom = arrayFrom.filter(e => e.id != id);
+	return arrayElement;
 }
 
 function createUserLiElement(user) {
@@ -94,7 +106,6 @@ function loadUsers() {
 		usersList.appendChild(createUserLiElement(currentUser));
 	})
 }
-
 function loadFollowees() {
 	var followeesList = document.getElementById('followees-list');
 
@@ -118,7 +129,7 @@ var usersArray =
 
 var followeesArray = [
 	{id: "4", username: 'Dracula', followed: true},
-   {id: "9", username: 'Henry the 8th', followed: true}
+    {id: "9", username: 'Henry the 8th', followed: true}
 ];
 
 window.onload = load();
