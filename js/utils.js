@@ -25,3 +25,4 @@ function createButtonElement(className, value) {
 	button.innerHTML = value;
 	return button;
 }
+
