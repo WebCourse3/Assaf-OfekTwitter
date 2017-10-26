@@ -1,15 +1,5 @@
 function filterUsersOnKeyUp(textbox) {
-	if(textbox.value == "") {
-		load();
-	} else {
-		var usersList = document.getElementById('users-list');
-		usersList.innerHTML = "";
-		usersArray.forEach(function (currentUser) {
-			if (currentUser.username.includes(textbox.value)) {
-				usersList.appendChild(createUserLiElement(currentUser));
-			} else {}
-		})
-	}
+		loadUsers(textbox.value)
 }
 
 function getIdOfButton(button) {
@@ -17,7 +7,6 @@ function getIdOfButton(button) {
 }
 
 function followButtonOnClick() {
-
 	var classPrimary = 'btn-primary';
 	var classDanger = 'btn-danger';
 	var id = getIdOfButton(this);
@@ -29,6 +18,7 @@ function followButtonOnClick() {
 		moveToFollowees(id);
 	}
 	this.followed = !this.followed;
+	filterUsersOnKeyUp(document.getElementById("filterUsersTextBox"))
 }
 
 function moveToUsers(id) {
@@ -112,11 +102,14 @@ function load() {
 	loadUsers();
 	loadFollowees();
 }
-function loadUsers() {
+function loadUsers(filter) {
+	filter = filter || "";
 	var usersList = document.getElementById('users-list');
 	usersList.innerHTML = "";
 	usersArray.forEach(function (currentUser) {
-		usersList.appendChild(createUserLiElement(currentUser));
+		if (currentUser.username.includes(filter)) {
+			usersList.appendChild(createUserLiElement(currentUser));
+		}
 	})
 }
 function loadFollowees() {
@@ -126,7 +119,6 @@ function loadFollowees() {
 		followeesList.appendChild(createUserLiElement(currentUser));
 	})
 }
-
 
 var usersArray =
 	[
