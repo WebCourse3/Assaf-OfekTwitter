@@ -1,3 +1,17 @@
+function filterUsersOnKeyUp(textbox) {
+	if(textbox.value == "") {
+		load();
+	} else {
+		var usersList = document.getElementById('users-list');
+		usersList.innerHTML = "";
+		usersArray.forEach(function (currentUser) {
+			if (currentUser.username.includes(textbox.value)) {
+				usersList.appendChild(createUserLiElement(currentUser));
+			} else {}
+		})
+	}
+}
+
 function getIdOfButton(button) {
 	return button.id.substring(3);
 }
@@ -18,13 +32,13 @@ function followButtonOnClick() {
 }
 
 function moveToUsers(id) {
-	moveElementToFolloweesList(id); // this gets the li element
-	moveToFolloweesList(id);
+	moveElementToUsersList(id); // this gets the li element
+	moveToUsersList(id);
 }
 
 function moveToFollowees(id) {
-	moveElementToUsersList(id); // this gets the li element
-	moveToUsersList(id);
+	moveElementToFolloweesList(id); // this gets the li element
+	moveToFolloweesList(id);
 }
 
 function updateButtonAttributes(button, removeClass, addClass, html) {
@@ -50,20 +64,19 @@ function moveElementBetweenLists(liId, listToId) {
 }
 
 function moveToFolloweesList(id)  {
-	var arrayElement = moveUserBetweenArrays(usersArray, followeesArray, id);
-	arrayElement.followed = true;
+	usersArray = moveUserBetweenArrays(usersArray, followeesArray, id);
 }
 
 function moveToUsersList(id) {
-	var arrayElement = moveUserBetweenArrays(followeesArray, usersArray, id);
-	arrayElement.followed = false;
+	followeesArray = moveUserBetweenArrays(followeesArray, usersArray, id);
 }
 
 function moveUserBetweenArrays(arrayFrom, arrayTo, id) {
 	var arrayElement = arrayFrom.find(e=>e.id == id);
+	arrayElement.followed = !arrayElement.followed
 	arrayTo.push(arrayElement);
 	arrayFrom = arrayFrom.filter(e => e.id != id);
-	return arrayElement;
+	return arrayFrom;
 }
 
 function createUserLiElement(user) {
@@ -101,14 +114,14 @@ function load() {
 }
 function loadUsers() {
 	var usersList = document.getElementById('users-list');
-
+	usersList.innerHTML = "";
 	usersArray.forEach(function (currentUser) {
 		usersList.appendChild(createUserLiElement(currentUser));
 	})
 }
 function loadFollowees() {
 	var followeesList = document.getElementById('followees-list');
-
+	followeesList.innerHTML = "";
 	followeesArray.forEach(function (currentUser) {
 		followeesList.appendChild(createUserLiElement(currentUser));
 	})
