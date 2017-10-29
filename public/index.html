@@ -36,8 +36,8 @@
 	<div class="col-sm-2"></div>
 	<div class="col-sm-8">
 		<div class="form-group">
-			<textarea class="form-control" rows="3" placeholder="tweet text..."></textarea>
-			<button type="button" class="btn btn-primary button-right">publish</button>
+			<textarea class="form-control" rows="3" placeholder="tweet text..." id="tweetTextArea"> </textarea>
+			<button type="button" class="btn btn-primary button-right" onclick="addTweet()">publish</button>
 		</div>
 
 	</div>
@@ -47,39 +47,14 @@
 <div class="row">
 	<div class="col-sm-2"></div>
 	<div class="col-sm-8">
-
-		<div class="tweet">
-			<div class="tweet-avatar"><img src="../images/useravatar.png"></div>
-			<div class="tweet-author">James Bond says:</div>
-			<div class="tweet-message">Blabla bla...</div>
+		<div id="tweetsList">
 		</div>
-
-		<div class="tweet">
-			<div class="tweet-avatar"><img src="../images/useravatar.png"></div>
-			<div class="tweet-author">James Bond says:</div>
-			<div class="tweet-message">Bond, James bond</div>
-		</div>
-
-		<div class="tweet">
-			<div class="tweet-avatar"><img src="../images/useravatar.png"></div>
-			<div class="tweet-author">Albert Einstein says:</div>
-			<div class="tweet-message">E = mc^2</div>
-		</div>
-
-		<div class="tweet">
-			<div class="tweet-avatar"><img src="../images/useravatar.png"></div>
-			<div class="tweet-author">Bill Gates says:</div>
-			<div class="tweet-message">I think 64 bytes should be enough for everyone</div>
-		</div>
-
-		<div class="tweet">
-			<div class="tweet-avatar"><img src="../images/useravatar.png"></div>
-			<div class="tweet-author">Frodo says:</div>
-			<div class="tweet-message">My Precious</div>
-		</div>
-
 	</div>
-	<div class="col-sm-2"></div>
 </div>
+
+<script type ="text/javascript" src = "../js/utils.js" > </script>
+<script type ="text/javascript" src = "../js/index.js" > </script>
+
+
 </body>
 </html>

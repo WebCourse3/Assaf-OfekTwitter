@@ -1,6 +1,9 @@
 .tweet {
-	margin-top: 20px;
+	margin-top: 30px;
 	margin-bottom: 20px;
+
+	max-height: 10%;
+	height: 30px;
 }
 .tweet-avatar {
 	float: left;
@@ -15,4 +18,8 @@
 
 .tweet-message {
 
+}
+
+#tweetsList {
+	margin-bottom: 20px;
 }
