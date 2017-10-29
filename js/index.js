@@ -45,9 +45,15 @@ function loadTweets() {
 	var tweetsListElement = document.getElementById('tweetsList');
 	tweetsListElement.innerHTML = '';
 
+
 	tweetsArray.forEach(function (currentTweet) {
 		tweetsListElement.appendChild(createTweetDivElement(currentTweet));
 	})
+
+	//load tests
+
+    test();
+
 }
 
 var tweetsArray =

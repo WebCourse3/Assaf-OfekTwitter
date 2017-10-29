@@ -6,6 +6,14 @@ function createDivElement(className) {
 	return div;
 }
 
+function createHeadingElement(headingSize, headingClass, headingContent) {
+    headingClass = headingClass || "";
+    var headingElement = document.createElement('h'+headingSize);
+    headingElement.className = headingClass;
+    headingElement.innerHTML = headingContent;
+    return headingElement;
+}
+
 function createImgElement(srcRef) {
 	var img = document.createElement('img');
 	img.src = srcRef;
