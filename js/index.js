@@ -1,4 +1,4 @@
-
+//comment
 function addTweet() {
 
 	var _author = 'Assaf';

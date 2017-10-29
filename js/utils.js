@@ -1,4 +1,4 @@
-
+//comment
 function createDivElement(className) {
 	className = className || "";
 	var div = document.createElement('div');
