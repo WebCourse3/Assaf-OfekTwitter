@@ -98,6 +98,35 @@ OfekQuery.prototype.filter = function (...funcs) {
 
 OfekQuery.prototype.css = function (property, value) {
 	for (ele in this.result) {
-
+		ele.style[property] = value;
 	}
 }
+
+OfekQuery.prototype.count = function () {
+	return this.result.length;
+}
+
+OfekQuery.prototype.appendChild = function (childElement) {
+	for (ele in this.result) {
+		ele.appendChild(childElement.cloneNode(true));
+	}
+}
+
+OfekQuery.prototype.getAttribute = function (attributeName) {
+	var ret = [this.result.length];
+	for (var i = 0; i < this.result.length; i++) {
+		ret[i] = this.result[i].getAttribute(attributeName);
+	}
+}
+
+OfekQuery.prototype.setAttribute = function (attributeName, attributeValue) {
+	for (var i = 0; i < this.result.length; i++) {
+		this.result[i].setAttribute(attributeName, attributeValue);
+	}
+}
+
+OfekQuery.prototype.get = function (index) {
+		return this.result[index];
+}
+
+
