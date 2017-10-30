@@ -52,7 +52,8 @@ function loadTweets() {
 
 	//load tests
 
-    test();
+	var a = new testInjector();
+	a.inject();
 
 }
 
