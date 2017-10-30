@@ -18,7 +18,6 @@ function OfekQuery(query) {
 	} else if (firstChar === separation[1]) {
 		oQuery.result = document.getElementsByClassName(query.substring(1));
 	} else {
-		debugger;
 		oQuery.result = document.getElementsByTagName(query);
 	}})();
 
