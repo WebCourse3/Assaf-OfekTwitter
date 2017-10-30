@@ -7,14 +7,13 @@ class testInjector {
 
 	inject() {
 		var testDiv = document.getElementById('test-results');//main div, should appear on html page
-		var that = this;//test injector context
+		var that = this;                                      //test injector context
 
 		function inject_test_group(name, test_group_function) {
 
 			that.testGroupPanelDiv = createDivElement('panel panel-success');
 
-			var panelBodyDiv = createDivElement('panel-body zero-padding');
-			that.panelBodyDiv = panelBodyDiv;
+			that.panelBodyDiv = createDivElement('panel-body zero-padding');
 
 			var panelHeadingDiv = createDivElement('panel-heading');
 			var headingElement = createHeadingElement(3, 'panel-title', name);
@@ -23,7 +22,7 @@ class testInjector {
 			test_group_function();
 
 			that.testGroupPanelDiv.appendChild(panelHeadingDiv);
-			that.testGroupPanelDiv.appendChild(panelBodyDiv);
+			that.testGroupPanelDiv.appendChild(that.panelBodyDiv);
 
 			testDiv.appendChild(that.testGroupPanelDiv);
 		}
@@ -41,6 +40,12 @@ class testInjector {
 			that.panelBodyDiv.appendChild(testResultDiv);
 		}
 
+
+
+
+
+
+		///////////////////this is where tests go
 		inject_test_group('test', function () {
 			assert(true, "test true");
 			assert(false, "test false");

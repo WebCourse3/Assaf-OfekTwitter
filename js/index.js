@@ -50,10 +50,7 @@ function loadTweets() {
 		tweetsListElement.appendChild(createTweetDivElement(currentTweet));
 	})
 
-	//load tests
-
-	var a = new testInjector();
-	a.inject();
+	new testInjector().inject();
 
 }
 
