@@ -1,19 +1,29 @@
 class testInjector {
 
-/*	constructor(name, booleanFunctions) {
-		this.name = name;
-		this.booleanFuncitons = booleanFunctions;
-	}*/
+	constructor(testGroupName, functions) {
+		this.testGroupName = testGroupName;
+		this.functions = functions;
+	}
 
 	inject() {
-		var testDiv = document.getElementById('test-results');//main div, should appear on html page
+
+		//injects main element
+		var rowDiv = createDivElement('row');
+		var colDiv = createDivElement('col-sm-6');
+		var testDiv = createDivElement();
+		testDiv.id = "test-results";
+		colDiv.appendChild(testDiv);
+		rowDiv.appendChild(colDiv);
+		document.body.appendChild(rowDiv);
+
 		var that = this;                                      //test injector context
 
 		function inject_test_group(name, test_group_function) {
 
 			that.testGroupPanelDiv = createDivElement('panel panel-success');
 
-			that.panelBodyDiv = createDivElement('panel-body zero-padding');
+			that.panelBodyDiv = createDivElement('panel-body');
+			that.panelBodyDiv.style.padding = 0;
 
 			var panelHeadingDiv = createDivElement('panel-heading');
 			var headingElement = createHeadingElement(3, 'panel-title', name);
@@ -29,35 +39,24 @@ class testInjector {
 
 		function assert(value, name) {
 			var testResultDiv = createDivElement('text-white');
-			var classToAdd = value ? 'bg-success' : 'bg-danger';
-			var message = value ? 'succeed' : 'failed';
-			testResultDiv.classList.add(classToAdd);
+
+			testResultDiv.classList.add(value ? 'bg-success' : 'bg-danger');
+
 			if (value === false) {
 				that.testGroupPanelDiv.classList.remove('panel-success')
 				that.testGroupPanelDiv.classList.add('panel-danger');
 			}
-			testResultDiv.innerHTML = name + ' test has ' + message;
+			testResultDiv.innerHTML = name + ' has ' +  (value ? 'succeeded' : 'failed');
 			that.panelBodyDiv.appendChild(testResultDiv);
 		}
 
 
-
-
-
-
-		///////////////////this is where tests go
-		inject_test_group('test', function () {
-			assert(true, "test true");
-			assert(false, "test false");
-			assert(true, "test true");
+		inject_test_group(that.testGroupName, function () {
+			that.functions.forEach(jFunc=>{
+				assert(jFunc.func(), jFunc.desc);
+			}
+			);
 		});
 
-		inject_test_group('test2', function () {
-			assert(true, "test true");
-			assert(true, "test true");
-			assert(true, "test true");
-		});
 	}
 }
-
-

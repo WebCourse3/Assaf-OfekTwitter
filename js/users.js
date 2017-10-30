@@ -100,7 +100,33 @@ function createUserLiElement(user) {
 function load() {
 	loadUsers();
 	loadFollowees();
+
+	new testInjector("users moving tests",
+		[
+			{
+				func: moveFromFolloweesToUsersTest,
+				desc: "Move From Followees To Users"
+			},
+
+			{
+				func: moveFromUsersToFolloweesTest,
+				desc: "Move From Users To Followees"
+			}]).inject();
+
+	new testInjector("button change tests",
+		[
+			{
+				func: changeButtonColorTest,
+				desc: "Add Tweet Test"
+			},
+
+			{
+				func: changeButtonTextTest,
+				desc: "text Box Clear Test"
+			}]).inject();
+
 }
+
 function loadUsers(filter) {
 	filter = filter || EMPTY_STRING;
 	var usersList = document.getElementById('users-list');

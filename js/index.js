@@ -50,7 +50,17 @@ function loadTweets() {
 		tweetsListElement.appendChild(createTweetDivElement(currentTweet));
 	})
 
-	new testInjector().inject();
+	new testInjector("index.js tests",
+		[
+		{
+			func: addTweetTest,
+			desc: "Add Tweet Test"
+		},
+
+		{
+			func: textBoxClearAfterAddTweetTest,
+			desc: "text Box Clear Test"
+		}]).inject();
 
 }
 
