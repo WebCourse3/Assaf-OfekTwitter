@@ -1,5 +1,9 @@
 function load() {
 
+	document.body.appendChild($('#1').map(function(element) {
+		element.classList.add('text-danger');
+	})[0]);
+
 	new testInjector("users moving tests",
 		[
 			{
@@ -37,5 +41,6 @@ function load() {
 			}]).inject();
 
 }
+
 
 window.onload = load();
