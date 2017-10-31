@@ -3,23 +3,60 @@ function $(query) {
 }
 
 function OfekQuery(query) {
+	this.result = ResolveQuery(query);
 
-	this.query = query;
+	function ResolveQuery(rquery) {
+		function ResolveRecursion(query, array, inside) {
+			var firstChar = query[0];
+			var word = getWord(query.substring(1));
+			var newArray = [];
 
-	var oQuery = this;
+			if (firstChar === ' ') {
+				return ResolveRecursion(query.substring(1), array, true);
+			}
+			else {
+				for (var fatherElement of array) {
+					if (inside) {
+						for (var j = 0; j < fatherElement.childNodes.length; j++) {
+							var allowPush =
+								(firstChar === '.' && fatherElement.childNodes[j].className === word) ||
+								(firstChar === '#' && fatherElement.childNodes[j].id === word) ||
+								(fatherElement.childNodes[j].tagName === word);
 
-	this.result = [];
+							if (allowPush) {
+								newArray.push(fatherElement.childNodes[j]);
+							}
+						}
+					} else {
+						var allowPush =
+							(firstChar === '.' && fatherElement.className === word) ||
+							(firstChar === '#' && fatherElement.id === word) ||
+							(fatherElement.tagName === word);
 
-	var separation = ['#', '.', ' '];
+						if (allowPush) {
+							newArray.push(fatherElement);
+						}
+					}
+				}
+			}
 
-	(function () {var firstChar = query[0];
-	if (firstChar === separation[0]) {
-		oQuery.result = [document.getElementById(query.substring(1))];
-	} else if (firstChar === separation[1]) {
-		oQuery.result = document.getElementsByClassName(query.substring(1));
-	} else {
-		oQuery.result = document.getElementsByTagName(query);
-	}})();
+			if (word.length === 0) {
+				return array;
+			}
+
+			return ResolveRecursion(query.substring(1 + word.length), newArray, false)
+		}
+
+		function getWord(query) {
+			var i = 0;
+			while (!('#. '.includes(query[i])) && i < query.length) {
+				i++;
+			}
+			return query.substring(0, i);
+		}
+
+		return ResolveRecursion(rquery, [document.body], true);
+	}
 
 }
 
@@ -40,8 +77,6 @@ OfekQuery.prototype.each = function (func) {
 		func(this.result[index]);
 	}
 }
-
-
 
 OfekQuery.prototype.map = function (func) {
 	var funcResult = [this.result.length]
@@ -127,5 +162,4 @@ OfekQuery.prototype.setAttribute = function (attributeName, attributeValue) {
 OfekQuery.prototype.get = function (index) {
 		return this.result[index];
 }
-
 

@@ -1,8 +1,6 @@
 function load() {
 
-	document.body.appendChild($('#1').map(function(element) {
-		element.classList.add('text-danger');
-	})[0]);
+	$('#1 .f#2 a').result[0].innerHTML = "heheh";
 
 	new testInjector("users moving tests",
 		[
