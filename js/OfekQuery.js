@@ -24,19 +24,19 @@ function OfekQuery(query) {
 }
 
 OfekQuery.prototype.addClass = function (className) {
-	for (let index = 0; index < this.result.length; ++index) {
+	for (var index = 0; index < this.result.length; ++index) {
 		this.result[index].classList.add(className);
 	}
 }
 
 OfekQuery.prototype.removeClass = function (className) {
-	for (let index = 0; index < this.result.length; ++index) {
+	for (var index = 0; index < this.result.length; ++index) {
 		this.result[index].classList.remove(className);
 	}
 }
 
 OfekQuery.prototype.each = function (func) {
-	for (let index = 0; index < this.result.length; ++index) {
+	for (var index = 0; index < this.result.length; ++index) {
 		func(this.result[index]);
 	}
 }
@@ -45,7 +45,7 @@ OfekQuery.prototype.each = function (func) {
 
 OfekQuery.prototype.map = function (func) {
 	var funcResult = [this.result.length]
-	for (let index = 0; index < this.result.length; ++index) {
+	for (var index = 0; index < this.result.length; ++index) {
 		funcResult[index] = this.result[index].cloneNode(true);
 		func(funcResult[index]);
 	}
