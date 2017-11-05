@@ -1,7 +1,5 @@
 function load() {
 
-	$('#1 .f#2 a').result[0].innerHTML = "heheh";
-
 	new testInjector("users moving tests",
 		[
 			{

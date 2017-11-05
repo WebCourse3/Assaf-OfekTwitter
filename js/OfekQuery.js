@@ -7,9 +7,9 @@ function OfekQuery(query) {
 
 	function ResolveQuery(rquery) {
 		function ResolveRecursion(query, array, inside) {
-			var firstChar = query[0];
-			var word = getWord(query.substring(1));
-			var newArray = [];
+			let firstChar = query[0];
+			let word = getWord(query.substring(1));
+			let newArray = [];
 
 			if (firstChar === ' ') {
 				return ResolveRecursion(query.substring(1), array, true);
